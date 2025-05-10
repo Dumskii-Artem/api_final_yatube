@@ -13,7 +13,7 @@ from api.serializers import (
     GroupSerializer,
     FollowSerializer
 )
-from posts.models import Post, Comment, Group, Follow
+from posts.models import Post, Comment, Group
 
 User = get_user_model()
 
@@ -46,13 +46,11 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = (IsAuthenticatedOrReadOnly, IsAuthorOrReadOnly)
-    # http_method_names = ['get', 'head', 'options']
 
 
 class FollowViewSet(mixins.CreateModelMixin,
                     mixins.ListModelMixin,
                     viewsets.GenericViewSet):
-    # queryset = Follow.objects.all()
     serializer_class = FollowSerializer
     permission_classes = (IsAuthenticated,)
     filter_backends = (filters.SearchFilter,)
