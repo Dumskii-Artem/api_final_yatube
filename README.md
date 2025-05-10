@@ -19,7 +19,8 @@ Windows: py -3.9 -m venv env
 Активировать виртуальное окружение:
 ```
 Ubuntu: source env/bin/activate
-Windows: spurce ./env/Scripts/activate  
+Windows: source ./env/Scripts/activate
+    или ./env/Scripts/activate
 ```
 Вот так написать:
 ```
@@ -36,15 +37,21 @@ cd yatube_api/
 ```
 Выполнить миграции:
 ```
-Ubuntu: python3 manage.py migrate
-Windows: python manage.py migrate
+Ubuntu: python3 manage.py makemigrations
+        python3 manage.py migrate
+Windows: python manage.py makemigrations
+         python manage.py migrate
 ```
 Запустить скрипт для создания пользователей,
-нужно для прохождения тестов  
+нужно для прохождения тестов
+
+в среде Windows выполняется в GitBash
+предварительно нужно создать виртуальное окружение в GitBash
 ```
 bash ../postman_collection/set_up_data.sh 
 ```
 Запустить проект:
 ```
-python3 manage.py runserver
+Ubuntu: python3 manage.py runserver
+Windows: python manage.py runserver
 ```
