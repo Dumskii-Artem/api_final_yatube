@@ -11,6 +11,7 @@ class GroupAdmin(admin.ModelAdmin):
         'description',
     )
 
+
 class PostAdmin(admin.ModelAdmin):
     list_display = (
         'text',
@@ -20,6 +21,7 @@ class PostAdmin(admin.ModelAdmin):
         'group'
     )
 
+
 class CommentAdmin(admin.ModelAdmin):
     list_display = (
         'author',
@@ -28,11 +30,13 @@ class CommentAdmin(admin.ModelAdmin):
         'created'
     )
 
+
 class FollowAdmin(admin.ModelAdmin):
     list_display = (
         'user',
         'following'
     )
+
 
 admin.site.register(Group, GroupAdmin)
 admin.site.register(Post, PostAdmin)
