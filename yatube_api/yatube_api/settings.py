@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'hhz7l-ltdismtf@bzyz+rple7*s*w$jak%whj@(@u0eok^f9k4'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -119,3 +119,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS_ORIGIN_ALLOW_ALL = True
 CORS_URLS_REGEX = r'^/api/.*$'
+
+CORS_ALLOW_ALL_ORIGINS = True
+# или если хочешь ограничить
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",  # или адрес твоего JS-клиента
+# ]
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
